@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='package',
-    version='0.1',
-    packages=find_packages(),
+    name='trialapp',
+    version='0.0.1',
+    packages=find_packages(where = 'traialapp'),
     install_requires=[],
     author='Aayush Sugandhi',
     author_email='aayush.sugandhi@gmail.com',
