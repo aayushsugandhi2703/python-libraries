@@ -28,10 +28,11 @@ jobs:
 
       - name: Run tests
         run: |
-          mkdir -p test-results
-          python -m unittest discover tests > test-results/results.txt
-      
-      - name : upload artifact
+          mkdir -p test-results  # Ensure the test-results directory exists
+          python -m unittest discover tests > test-results/results.txt  # Save test results
+
+      - name: Upload artifact
         uses: actions/upload-artifact@v3
-        with: 
-          name: test-results/results.txt
+        with:
+          name: test-results
+          path: test-results/results.txt  # Correct path to upload the artifact
