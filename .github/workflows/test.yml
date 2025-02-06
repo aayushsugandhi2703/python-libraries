@@ -3,7 +3,7 @@ name: my_first_workflow
 on: [push, pull_request]
 
 jobs:
-  test:
+  build_test:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,4 +27,11 @@ jobs:
         run: pip list  # Check installed packages for debugging
 
       - name: Run tests
-        run: python -m unittest discover tests
+        run: |
+          mkdir -p test-results
+          python -m unittest discover tests > test-results/results.txt
+      
+      - name : upload artifact
+        uses: actions/upload-artifact@v3
+        with: 
+          name: test-results/results.txt
