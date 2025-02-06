@@ -32,7 +32,7 @@ jobs:
           python -m unittest discover tests > test-results/results.txt  # Save test results
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-results
           path: test-results/results.txt  # Correct path to upload the artifact
