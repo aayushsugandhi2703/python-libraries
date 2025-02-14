@@ -32,3 +32,5 @@ links = soup1.find_all('a')
 for link in links:
     print(link.get('href'))
 
+open = soup1.get('a')
+print(open)
