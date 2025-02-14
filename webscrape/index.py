@@ -1,3 +1,4 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
@@ -7,6 +8,11 @@ soup1 = BeautifulSoup(page1, 'html.parser')
 
 page2 = urlopen('https://thehackernews.com/search/label/Cyber%20Attack')
 soup2 = BeautifulSoup(page2, 'html.parser')
+
+with open('index.html', 'w', encoding='utf-8') as file:
+    page1 = urlopen('https://thehackernews.com/')
+    soup1 = BeautifulSoup(page1, 'html.parser') 
+    file.write(soup1.prettify())
 
 # extracting the top 10 headlines from the hacker news
 
