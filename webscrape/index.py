@@ -26,3 +26,9 @@ headlines =  soup2.select('h2')
 for i in headlines[:10]:
     print(f"Attacks : {i.get_text()}")
 
+# extracting the links from the hacker news
+
+links = soup1.find_all('a')
+for link in links:
+    print(link.get('href'))
+
