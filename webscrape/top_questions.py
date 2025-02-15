@@ -16,10 +16,18 @@ response = requests.get('https://github.com/trending')
 soup = BeautifulSoup(response.text, 'html.parser')
 
 repository = soup.select('h2', class_='h3 lh-condensed')
-for i in repository[:10]:
-    print(f"Repository : {i.text.strip()}")
+#for i in repository[:10]:
+    #print(f"Repository : {i.text.strip()}")
 
-repo = soup.select('article', class_='Box-row')
-for i in repo[:10]:
-    question = i.select('h2', class_='h3 lh-condensed')
-    stars = i.select('span', class_='d-inline-block float-sm-right')
+repos = soup.select('article.Box-row')
+for i in repos[:10]:
+    # Extract repository name
+    repo_name_tag = i.select_one("h2.h3.lh-condensed a")
+    repo_name = repo_name_tag.text.strip() 
+
+    # Extract star count (using updated GitHub selector)
+    star_tag = i.select_one("a[href*='/stargazers']")
+    star_count = star_tag.text.strip() if star_tag else "No stars"
+
+    # Print results
+    print(f"Repository: {repo_name} | Stars: {star_count}") 
