@@ -12,4 +12,3 @@ print(psutil.disk_io_counters(perdisk=False))
 
 # getting disk read write statistics
 print(psutil.disk_io_counters())
-

@@ -20,4 +20,3 @@ print(psutil.getloadavg())
 # getting CPU times
 print(psutil.cpu_times(percpu=True))
 print(psutil.cpu_times(percpu=False))
-
