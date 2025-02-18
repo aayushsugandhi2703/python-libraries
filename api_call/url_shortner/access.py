@@ -1,9 +1,8 @@
 import json
 import requests
 
-#Access token: 759718f146fd23a19d7a6a98fbd7c56ae0344d44
 url ="https://api-ssl.bitly.com/v4/shorten"
-access_token = "759718f146fd23a19d7a6a98fbd7c56ae0344d44"
+access_token = ""
 
 parameters = {
     "Authorization": f"Bearer {access_token}",  
