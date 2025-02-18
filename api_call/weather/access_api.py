@@ -4,7 +4,7 @@ import os
 import json
 
 
-API_KEYS = ''
+API_KEYS = 'f75bb3533a71f3c1e90ef6c58a0c4656'
 Location = 'Bangalore, India'
 base_url = 'http://api.weatherstack.com/current'
 
