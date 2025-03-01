@@ -30,7 +30,7 @@ print(details)
 # Sending the email notifications
 
 sender_email = "aayush.sugandhi@gmail.com"
-receiver_email = "eng22cs0218@dsu.eddu.in"
+receiver_email = "eng22cs0218@dsu.edu.in"
 password = "password"
 subject = "Flipkart Product Details"
 body = """
